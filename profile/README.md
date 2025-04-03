@@ -1,8 +1,7 @@
-# Projeto Integrador - Modelo
-*(Pizzaria Santory.)*
+# Projeto Integrador - Sistema de Gestão para Pizzaria
+*(Pizzaria Santory)*
 
-Um modelo para o desenvolvimento do Projeto Integrador do Curso de Técnico em Desenvolvimento de Sistemas para a Internet Integrado ao Ensino Médio do IFC - Campus Araquari.
-*(Coloque aqui uma breve descrição do seu projeto.)*
+O projeto consiste no desenvolvimento de um sistema de gestão para a Pizzaria Santory, uma empresa familiar que busca modernizar seus processos operacionais. O objetivo principal é automatizar o registro de pedidos, o controle de estoque, a gestão de entregas e a comunicação com os clientes, proporcionando maior eficiência e melhor experiência para os consumidores. A solução também incluirá funcionalidades como pagamento online, rastreamento de pedidos e ferramentas de fidelização, atendendo às necessidades específicas da pizzaria e resolvendo os problemas identificados em sua operação atual.
 
 **IMPORTANTE**: [**Cadastre seu projeto nesse link**](https://docs.google.com/spreadsheets/d/165xR63Yy9C75saQX-I_RsZV-hTrdiToei5Ave0JU1uQ/edit?usp=sharing).
 
