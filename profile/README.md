@@ -31,12 +31,9 @@ Links do projeto:
 
 **1.1.1 Ponto de Vendas (PDV)**
 
-**Gerenciamento de vendas para uma padaria**
+**Gerenciamento de pedidos e entregas para uma pizzaria**
 
-O nosso cliente, Sr. Genival, tem uma padaria de bairro chamada padaria Pão Genial e, devido a qualidade de seus produtos, ela está crescendo rapidamente. Recentemente, ele contratou mais funcionários para atendimento, caixa, panificação, etc.
-Assim, atualmente, ele consegue concentrar seus esforços para melhorar a gestão da padaria. Para isso, ele quer instalar um sistema de controle de vendas que permita ao caixa lançar as vendas realizadas. Como sua intenção
-é melhorar a gestão do negócio, é muito importante que ele consiga ter
-relatórios, como por exemplo, de vendas.
+O sistema escolhido será um software de gestão para a Pizzaria Santory. O objetivo é automatizar os processos de pedidos, entregas e controle de estoque, além de oferecer opções de pagamento online e ferramentas para fidelização de clientes. A escolha foi motivada pela necessidade de resolver os problemas operacionais identificados, como atrasos, erros no registro de pedidos e falta de controle eficiente de insumos, garantindo uma melhor experiência para os clientes e maior eficiência para a empresa.
 
 #2. Situacao Problema
 
