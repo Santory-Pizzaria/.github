@@ -1,5 +1,5 @@
 # Projeto Integrador - Modelo
-*(Coloque aqui o nome do seu projeto.)*
+*(Pizzaria Santory.)*
 
 Um modelo para o desenvolvimento do Projeto Integrador do Curso de Técnico em Desenvolvimento de Sistemas para a Internet Integrado ao Ensino Médio do IFC - Campus Araquari.
 *(Coloque aqui uma breve descrição do seu projeto.)*
@@ -9,26 +9,16 @@ Um modelo para o desenvolvimento do Projeto Integrador do Curso de Técnico em D
 Professor: [Marco André Mendes](github.com/marcoandre)
 
 Equipe:
-- [Aluno1](github.com/aluno1)
-- [Aluno2](github.com/aluno2)
+- [Higor do Amaral Fritz](https://github.com/HigorAmaral)
+- [Matheus Gaspar](https://github.com/Gaspatt)
+- [Nicolas Sestrem](https://github.com/i-sestrem).
+- [Kaue Ian Dombrovski da Cunha](https://github.com/kaue-ian)
 
 Links do projeto:
 (*Coloque aqui os links para a documentação do projeto e os repositórios e plubicação do backend e frontend.*)
--   [Documentação (esse documento)](github.com/marcoandre/pi-modelo)
--   Backend: [Repositório](github.com/marcoandre/pi-backend) e [Publicação](https://pi-backend.herokuapp.com/)
--   Frontend: [Repositório](github.com/marcoandre/pi-frontend) e [Publicação](https://pi-frontend.herokuapp.com/)
-
-**Como usar esse modelo para o Projeto Integrador**
-
-*(Essa parte pode ser apagada depois.)*
-
-1. Faça um fork desse repositório para a sua conta do GitHub.
-2. Clone o repositório para o seu computador.
-3. Abra o arquivo README.md no seu editor de texto favorito (recomendamos o [Visual Studio Code](https://code.visualstudio.com/)).
-4. Tenha instaladas as seguintes extensões:
-   - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-   - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
-5. Edite o arquivo README.md com as informações do seu projeto.
+-   [Documentação (esse documento)]()
+-   Backend: [Repositório](https://github.com/Santory-Pizzaria/SantoryBackEnd.git) e [Publicação]()
+-   Frontend: [Repositório](https://github.com/Santory-Pizzaria/SantoryFrontEnd.git) e [Publicação]()
 
 # 1. Desenvolvimento
 *(Escolha um dos modelos de sistemas para desenvolver o projeto. Apague as informações desnecessárias depois.)*
@@ -48,21 +38,7 @@ Assim, atualmente, ele consegue concentrar seus esforços para melhorar a gestã
 é melhorar a gestão do negócio, é muito importante que ele consiga ter
 relatórios, como por exemplo, de vendas.
 
-**1.1.2 Empréstimo**
-
-**Gerenciamento de uma biblioteca**
-
-Uma ONG, chamada Sala Arco Íris, ajuda crianças de baixa renda em sua educação básica. Atualmente, recebeu uma doação de mais de 1000 livros e está montando a sua biblioteca. Eles querem emprestar os livros para as crianças e os pais das crianças. Apesar de
-terem um computador e as estantes necessárias à disposição nessa nova biblioteca, não possuem verba suficiente para um leitor de impressão digital ou para produção
-de carteirinhas para todas as crianças. Para isso, eles precisam de um sistema que gerencie todo o acervo, empréstimos, livros disponíveis, etc. mas que isso ocorra de maneira simples e sem necessidade de novos gastos. Também é importante que haja relatórios, permitindo o controle dos empréstimos e dos livros disponíveis no acervo.
-
-**1.1.3 Ordem de Serviço (O.S.)**
-
-**Manutenção de computadores**
-
-Sr. Sálvio, nosso cliente, fez um curso de manutenção de celulares e smartphones e decidiu abrir um negócio no qual ele é responsável pelos consertos e sua esposa, Marília, realiza o atendimento aos clientes. Com sua visão empreendedora, ele sentiu a necessidade de um software que auxilie sua esposa nas tarefas diárias. Para isso, ele deseja um sistema que gerencie os clientes, orçamentos, serviços e retirada dos equipamentos. Sendo um negócio pequeno, é muito importante para ele conseguir ter relatórios que o ajudem na gestão da empresa, como o status dos serviços.
-
-# 2. Situação Problema
+#2. Situacao Problema
 
 **Introdução:**
 A Pizzaria Santory é uma empresa familiar localizada no centro da cidade, fundada há 10 anos por João e Maria Silva. A pizzaria é conhecida pela qualidade de suas pizzas artesanais e pelo atendimento acolhedor. Atualmente, a empresa conta com 10 funcionários, incluindo pizzaiolos, atendentes e entregadores. Apesar do sucesso local, a pizzaria enfrenta desafios para atender à crescente demanda de pedidos, especialmente nos horários de pico.
@@ -76,25 +52,6 @@ Outro ponto crítico é a ausência de um sistema de pagamento online. Os client
 
 **Conclusão:**
 Os problemas identificados, como erros no registro de pedidos, atrasos nas entregas, falta de controle de estoque e ausência de opções de pagamento online, impactam diretamente a experiência do cliente e a eficiência operacional da pizzaria. Um software integrado poderia resolver esses problemas ao automatizar o registro de pedidos, implementar um sistema de rastreamento de entregas, gerenciar o estoque em tempo real e oferecer opções de pagamento online, além de criar um canal digital para promoções e fidelização de clientes.
-
-![Ciclo da Venda](docs/ciclo_da_venda.webp "Ciclo da Venda")
-
-Descrevem o que acontece atualmente na empresa em um contexto global,
-abordando o funcionamento da empresa como um todo, não apenas os “problemas” que lá ocorrem.
-
-Sabendo disso, seu papel é **detalhar o funcionamento da empresa escolhida na
-atualidade, ou seja, antes de seu novo software**, usando como base a situação que passamos, mas aprofundando os detalhes de como as coisas acontecem.
-
--   Pesquise sobre empresas do ramo escolhido
-    para entender como funcionam;
--   Aproveite seus conhecimentos previamente adquiridos na área da empresa que escolheu, se houver;
--   Simule uma situação real. Lembre-se que são propostas com empresas fictícias, sendo assim, você terá que tomar certas decisões sobre como a empresa funciona em relação às coisas que não estão definidas no documento base (por exemplo, no caso da padaria, dizemos que seu Genival contratou mais funcionários, mas saber quantos e o que fazem pode ser relevante para o software), então tente “visualizar” a empresa funcionando, como se você estivesse lá acompanhando o dia-a-dia;
-
-Seguindo essas dicas, você deve ser capaz de descrever o dia-a-dia da empresa selecionada. E para ajudar na organização do texto, indicamos uma abordagem em 3 etapas:
-
--   **Introdução**: comece com um parágrafo apresentando a empresa (nome, o que faz, tempo de existência, o dono, funcionários, etc);
--   **Situação-problema**: Aborde em detalhes como a empresa funciona, procurando seguir uma ordem lógica dos acontecimentos e organizando parágrafos diferentes para cada coisa diferente que for explicar (como faria em uma redação);
--   **Conclusão**: tenha um parágrafo de conclusão focando nos problemas que você notou dentro da situação problema analisada e aponte brevemente como um software poderia ajudar a resolvê-los.
 
 # 3. Descrição da proposta
 
