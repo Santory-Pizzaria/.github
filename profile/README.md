@@ -208,158 +208,79 @@ RN20: Promoções podem ter validade e condições específicas.
 
 # 5. Requisitos funcionais
 
-(_Nessa parte a equipe deve descrever os requisitos funcionais que serão implementados no sistema. O texto abaixo descreve o que essa etapa deve conter e pode ser apagado depois._)
+RF01: Permitir pedidos online por clientes cadastrados ou não.
 
-**5.1 O que são requisitos funcionais?**
+RF02: Permitir registro de pedidos por telefone ou presencialmente.
 
-Um requisito funcional é uma declaração de como um sistema deve se comportar. Define o que o sistema deve fazer para atender às necessidades ou expectativas do usuário. Os requisitos funcionais podem ser pensados ​como recursos que o usuário detecta.
+RF03: Exibir cardápio completo com descrições, tamanhos e preços.
 
-Os requisitos funcionais são compostos de duas partes:
-**função** e **comportamento**.
+RF04: Permitir personalização de itens (ingredientes, massa, observações).
 
-- A **função** é o que o sistema **faz**. Por exemplo: _“calcular imposto sobre vendas”_.
-- O **comportamento** é **como** o sistema faz. Por exemplo: _“O sistema deve calcular o imposto sobre vendas multiplicando o preço de compra pela alíquota do imposto.”_.
+RF05: Calcular automaticamente o valor total do pedido.
 
-**5.2 Tipos de requisitos funcionais**
+RF06: Permitir escolha da forma de pagamento.
 
-Os requisitos funcionais podem ser classificados em:
+RF07: Enviar notificação de confirmação do pedido.
 
-- Regulamentos de Negócios
-- Requisitos de Certificação
-- Requisitos de relatório
-- Funções Administrativas
-- Níveis de autorização
-- Rastreamento de auditoria
-- Interfaces Externas
-- Gestão de dados
-- Requisitos Legais e Regulamentares
+RF08: Interface para cozinha visualizar pedidos pendentes.
 
-**5.3 Diretrizes para a elaboração de requisitos funcionais**
+RF09: Permitir que a cozinha atualize o status do pedido.
 
-Cada requisito funcional precisa ser:
+RF10: Permitir cancelamento de pedidos conforme a RN18.
 
-- **Específico** sobre o que o sistema deve fazer.
-- **Mensurável** para que você possa dizer se o sistema está fazendo isso
-- **Alcançável** dentro do prazo que você definiu
-- **Relevante** para seus objetivos de negócios
-- **Limitado** no tempo para que você possa
-  acompanhar o progresso
+RF11: Registrar o horário de cada etapa do pedido.
 
-**5.4 Estrutura do requisito funcional**
+RF12: Atribuir pedidos a entregadores disponíveis.
 
-Um requisito funcional deve ser estruturado da seguinte forma:
+RF13: Fornecer detalhes do pedido aos entregadores.
 
-- **Nome do requisito funcional:** descrição do
-  requisito.
-  - **Dados necessários:** dado 1, dado 2, dado 3.
-  - **Usuários:** todos os níveis de usuário.
+RF14: Sugerir rotas otimizadas (opcional).
 
-**5.4.1 Nome do requisito funcional**
+RF15: Atualizar status da entrega pelo entregador.
 
-**R.F. 99 - Nome do requisito funcional:** é o nome da função que o software terá. Sugerimos, por padronização, que tenha o prefixo R.F. (requisito funcional)
-seguida da numeração, para melhor identificação do requisito, acrescido do formato _“Substantivo + onde será feita a ação”_.
-Por exemplo:
+RF16: Permitir rastreio do pedido em tempo real pelo cliente.
 
-- R.F. 01 - Registro de Funcionários
-- R.F. 15 - Gerenciamento de consultas
-- R.F. 04 - Débito em conta corrente
+RF17: Cadastrar ingredientes com unidade e quantidade inicial.
 
-Deixe para definir as numerações ao final, tendo em vista que mudanças podem acontecer e não é prático sempre ficar reajustando os números.
+RF18: Deduzir estoque com base nos pedidos preparados.
 
-**5.4.2 Descrição do requisito funcional**
+RF19: Alertas automáticos ao atingir estoque mínimo.
 
-**Descrição do requisito:** local para descrever a função deste requisito.
+RF20: Registrar entrada de ingredientes manualmente.
 
-Sempre se preocupe em esclarecer dois pontos: o que o requisito faz e o motivo de sua existência. Isso é especialmente importante se a ação executada nesse requisito não for algo que já acontece naturalmente na empresa.
-Um exemplo é um Registro de funcionários, que talvez não exista hoje mas para o software é necessário para viabilizar uma autenticação de
-usuários. Outro exemplo é algo que faz sentido apenas para um software, como a própria autenticação.
+RF21: Gerar relatórios de movimentação de estoque.
 
-**5.4.3 Dados necessários**
+RF22: Integrar com gateways de pagamento online.
 
-**Dados necessários:** aqui devem ser colocados os nomes dos dados que serão usados para que esse requisito atenda o que precisa fazer.
+RF23: Registrar pagamentos na entrega.
 
-Nas **entradas** e **processos**, em geral, são os dados que serão salvos (seja algo digitado pelo usuário ou captado do sistema, como a hora atual).
+RF24: Gerar comprovantes de pagamento para clientes.
 
-Já nas **saídas**, são os dados que serão exibidos em tela (sejam eles vindos diretamente do banco, ou criados por um cálculo ou busca na sessão do usuário).
+RF25: Cadastro de clientes com dados e histórico de pedidos.
 
-**5.4.4 Usuários**
+RF26: Visualização do histórico de pedidos pelos clientes.
 
-**Usuários:** aqui devem ser colocados os nomes dos usuários que terão acesso a esse requisito, conforme enumerados na descrição do sistema.
+RF27: Criação e gestão de promoções pelo administrador.
 
-**5.4.5 Exemplo de requisito funcional**
+RF28: Divulgação de promoções ativas na plataforma.
 
-- **R.F. 01 - Autenticação de usuário:** tem como propósito autenticar o acesso ao sistema, verificando se o usuário pode acessá-lo e, caso possa, o direcionando
-  para a página principal de seu perfil de acesso.
-  - **Dados necessários:** login, senha, nível de permissão.
-  - **Usuários:** todos os níveis de usuário.
+RF29: Sistema de pontos de fidelidade (opcional).
 
-**5.4.6 Organização dos requisitos funcionais**
+RF30: Cadastro e gerenciamento de usuários do sistema.
 
-As funcionalidades devem ser organizadas em: entradas, processos e saídas.
+RF31: Definir níveis de permissão para usuários.
 
-**Entradas:** São as funcionalidades que alimentarão o software com as informações essenciais para seu uso.
+RF32: Configurar informações gerais da pizzaria.
 
-**Exemplos de entradas:**
+RF33: Cadastrar e gerenciar itens do cardápio.
 
-- “**Registro de usuário**” (para permitir depois seu acesso ao software).
-- “**Registro de paciente**” (que seria útil caso nosso software fosse ppara uma clínica, evitando registrar várias vezes os mesmos dados da pessoa a cada consulta e viabilizando um histórico de seus
-  atendimentos).
+RF34: Gerar relatórios gerenciais diversos.
 
-**Processos:** Em geral, englobam toda ação que executa cálculos, processamentos de tomada de decisão ou transforma dados em novos dados.
+RF35: Interface para atendentes gerenciarem pedidos e clientes.
 
-**Exemplos de processos:**
+RF36: Interface para pizzaiolos acompanharem a fila de pedidos.
 
-- “**Autenticação de usuário**”, que usará os dados de “**Registro de usuário**” em sua execução.
-- “**Agendamento de consulta**”, que usará dados do “**Registro de paciente**” e talvez do “**Registro de funcionário**” em sua execução.
-
-**Saídas:** São os relatórios, gráficos, impressões, etc., que utilizarem os dados do software para gerar informações pertinentes ao
-negócio, mas sem intenção de alterá-los, apenas permitindo sua visualização e filtragem.
-
-**Exemplos de saídas:**
-
-- “Relatório de consultas por paciente”.
-- Relatório de vendas”.
-- “Log de usuários autenticados”.
-
-Todos esses podem ser consideradas saídas, pois usam informações de entradas e processos de modo a mostrar informações relevantes ao
-negócio. Lembre-se que, diferentemente das entradas e processos, aqui os dados necessários devem ser os que a tela exibirá.
-
-**5.4.7 Exemplo de organização dos requisitos funcionais**
-
-(_A seguir, um exemplo de organização de requisitos funcionais, com entradas, processos e saídas._)
-
-**Entradas:**
-
-- **R.F. 01 - Nome do requisito funcional:** descrição do requisito.
-
-  - **Dados necessários:** dado 1, dado 2, dado 3.
-  - **Usuários:** todos os níveis de usuário.
-
-- **R.F. 02 - Nome do requisito funcional:** descrição do requisito.
-  - **Dados necessários:** dado 1, dado 2, dado 3.
-  - **Usuários:** todos os níveis de usuário.
-
-**Processamento:**
-
-- **R.F. 03 - Nome do requisito funcional:** descrição do requisito.
-
-  - **Dados necessários:** dado 1, dado 2, dado 3.
-  - **Usuários:** todos os níveis de usuário.
-
-- **R.F. 04 - Nome do requisito funcional:** descrição do requisito.
-  - **Dados necessários:** dado 1, dado 2, dado 3.
-  - **Usuários:** todos os níveis de usuário.
-
-**Saídas:**
-
-- **R.F. 05 - Nome do requisito funcional:** descrição do requisito.
-
-  - **Dados necessários:** dado 1, dado 2, dado 3.
-  - **Usuários:** todos os níveis de usuário.
-
-- **R.F. 06 - Nome do requisito funcional:** descrição do requisito.
-  - **Dados necessários:** dado 1, dado 2, dado 3.
-  - **Usuários:** todos os níveis de usuário.
+RF37: Interface mobile para entregadores atualizarem entregas e pagamentos.
 
 # 6. Requisitos não funcionais
 
