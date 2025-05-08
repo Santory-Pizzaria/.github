@@ -167,24 +167,43 @@ Essa modelagem garante a rastreabilidade dos pedidos, controle de estoque, gest�
 # 4. Regras de negócio
 
 RN01: Um pedido pode ser registrado através da plataforma online ou diretamente no ponto de venda (presencial/telefone(site).
+
 RN02: O status de um pedido deve ser atualizado em tempo real e visível para o cliente e funcionários relevantes.
+
 RN03: O controle de ingredientes em estoque deve ser automatizado, com baixas conforme os pedidos são preparados.
+
 RN04: O sistema deve gerar alertas para o administrador quando o estoque atingir um limite mínimo.
+
 RN05: O sistema deve suportar pagamentos online através de métodos seguros.
+
 RN06: Pagamentos na entrega devem ser registrados no sistema pelo entregador ou atendente.
+
 RN07: Clientes cadastrados devem poder rastrear o status de seus pedidos.
+
 RN08: O administrador deve poder criar, gerenciar e divulgar promoções e ofertas.
+
 RN09: O sistema deve gerar relatórios gerenciais para análise de vendas, estoque e desempenho.
+
 RN10: O sistema deve ter três níveis de acesso: Administrador, Funcionário e Cliente.
+
 RN11: O Administrador tem acesso irrestrito ao sistema.
+
 RN12: Funcionários têm acesso limitado às suas responsabilidades.
+
 RN13: Clientes podem realizar e acompanhar pedidos, visualizar histórico e acessar promoções.
+
 RN14: O registro manual de pedidos em papel deve ser substituído pelo sistema digital.
+
 RN15: A comunicação entre atendimento e cozinha deve ocorrer via sistema.
+
 RN16: Informações de entrega devem ser fornecidas aos entregadores via sistema.
+
 RN17: O sistema deve prover um canal digital para comunicação e fidelização de clientes.
+
 RN18: Um pedido só pode ser cancelado antes de iniciar o preparo.
+
 RN19: Cada item do cardápio deve ter preço definido e associação com ingredientes.
+
 RN20: Promoções podem ter validade e condições específicas.
 
 # 5. Requisitos funcionais
