@@ -1,5 +1,6 @@
 # Projeto Integrador - Sistema de Gestão para Pizzaria
-*(Pizzaria Santory)*
+
+_(Pizzaria Santory)_
 
 O projeto consiste no desenvolvimento de um sistema de gestão para a Pizzaria Santory, uma empresa familiar que busca modernizar seus processos operacionais. O objetivo principal é automatizar o registro de pedidos, o controle de estoque, a gestão de entregas e a comunicação com os clientes, proporcionando maior eficiência e melhor experiência para os consumidores. A solução também incluirá funcionalidades como pagamento online, rastreamento de pedidos e ferramentas de fidelização, atendendo às necessidades específicas da pizzaria e resolvendo os problemas identificados em sua operação atual.
 
@@ -8,16 +9,18 @@ O projeto consiste no desenvolvimento de um sistema de gestão para a Pizzaria S
 Professor: [Marco André Mendes](github.com/marcoandre)
 
 Equipe:
+
 - [Higor do Amaral Fritz](https://github.com/HigorAmaral)
 - [Matheus Gaspar](https://github.com/Gaspatt)
 - [Nicolas Sestrem](https://github.com/i-sestrem).
 - [Kaue Ian Dombrovski da Cunha](https://github.com/kaue-ian)
 
 Links do projeto:
-(*Coloque aqui os links para a documentação do projeto e os repositórios e plubicação do backend e frontend.*)
--   [Documentação (esse documento)]()
--   Backend: [Repositório](https://github.com/Santory-Pizzaria/SantoryBackEnd.git) e [Publicação]()
--   Frontend: [Repositório](https://github.com/Santory-Pizzaria/SantoryFrontEnd.git) e [Publicação]()
+(_Coloque aqui os links para a documentação do projeto e os repositórios e plubicação do backend e frontend._)
+
+- [Documentação (esse documento)]()
+- Backend: [Repositório](https://github.com/Santory-Pizzaria/SantoryBackEnd.git) e [Publicação]()
+- Frontend: [Repositório](https://github.com/Santory-Pizzaria/SantoryFrontEnd.git) e [Publicação]()
 
 # 1. Desenvolvimento
 
@@ -53,6 +56,7 @@ O software proposto para a Pizzaria Santory será uma plataforma integrada que a
 - **Foco de ação do software:** O sistema permitirá o registro de pedidos online e presencial, o acompanhamento em tempo real do status dos pedidos, o gerenciamento de entregas e o controle automatizado de estoque. Além disso, oferecerá opções de pagamento online e ferramentas para divulgação de promoções e fidelização de clientes.
 
 - **Níveis de usuário do sistema:**
+
   - **Administrador:** Terá acesso completo ao sistema, podendo gerenciar pedidos, estoque, entregas, promoções e relatórios.
   - **Funcionários:** Divididos em atendentes, pizzaiolos e entregadores, cada grupo terá acesso restrito às funcionalidades relacionadas às suas funções específicas.
   - **Clientes:** Poderão realizar pedidos, acompanhar o status das entregas e acessar promoções.
@@ -69,14 +73,100 @@ Com essa solução, a Pizzaria Santory poderá reduzir erros operacionais, melho
 
 # 4. Modelagem de Dados
 
-(*Nessa parte a equipe deve descrever a modelagem de dados que será implementada no sistema. O texto abaixo descreve o que essa etapa deve conter e pode ser apagado depois.*)
+A modelagem de dados do sistema da Pizzaria Santory foi elaborada para garantir o controle eficiente dos pedidos, estoque, entregas, promoções e usuários. Abaixo estão descritas as principais entidades, seus atributos e os relacionamentos entre elas.
 
-Defina as entidades e relacionamentos que farão parte do sistema. Desenhe o diagrama de entidade-relacionamento (DER) e descreva as entidades e relacionamentos que farão parte do sistema.
+## 4.1 Entidades Principais
 
+- **Usuário**
+  - id_usuario (PK)
+  - nome
+  - email
+  - senha
+  - telefone
+  - tipo (administrador, atendente, pizzaiolo, entregador, cliente)
 
+- **Pedido**
+  - id_pedido (PK)
+  - data_hora
+  - status (em preparo, em entrega, entregue, cancelado)
+  - valor_total
+  - id_cliente (FK)
+  - id_endereco_entrega (FK)
+
+- **ItemPedido**
+  - id_item_pedido (PK)
+  - id_pedido (FK)
+  - id_produto (FK)
+  - quantidade
+  - preco_unitario
+
+- **Produto**
+  - id_produto (PK)
+  - nome
+  - descricao
+  - preco
+  - categoria (pizza, bebida, sobremesa, etc.)
+  - estoque_atual
+
+- **Estoque**
+  - id_estoque (PK)
+  - id_produto (FK)
+  - quantidade
+  - data_ultima_atualizacao
+
+- **Entrega**
+  - id_entrega (PK)
+  - id_pedido (FK)
+  - id_entregador (FK)
+  - status_entrega (pendente, em rota, entregue)
+  - data_hora_saida
+  - data_hora_entrega
+
+- **Promoção**
+  - id_promocao (PK)
+  - titulo
+  - descricao
+  - data_inicio
+  - data_fim
+  - desconto_percentual
+
+- **Pagamento**
+  - id_pagamento (PK)
+  - id_pedido (FK)
+  - valor
+  - metodo (dinheiro, cartão, online)
+  - status_pagamento (pendente, aprovado, recusado)
+
+- **Endereço**
+  - id_endereco (PK)
+  - id_usuario (FK)
+  - rua
+  - numero
+  - bairro
+  - cidade
+  - cep
+
+## 4.2 Relacionamentos
+
+- Um **Usuário** pode ser cliente, funcionário ou administrador.
+- Um **Cliente** pode ter vários **Pedidos**.
+- Cada **Pedido** pode conter vários **ItensPedido**.
+- Cada **ItemPedido** está relacionado a um **Produto**.
+- O **Estoque** controla a quantidade de cada **Produto**.
+- Cada **Pedido** pode gerar uma **Entrega**, realizada por um **Entregador** (Usuário).
+- **Promoções** podem ser aplicadas a **Pedidos** ou **Produtos**.
+- Cada **Pedido** possui um **Pagamento** associado.
+- **Endereços** são cadastrados pelos usuários para entrega.
+
+## 4.3 Diagrama Entidade-Relacionamento (DER)
+
+![Diagrama Entidade-Relacionamento](img/der.png "Diagrama Entidade-Relacionamento")
+
+Essa modelagem garante a rastreabilidade dos pedidos, controle de estoque, gestão de entregas e promoções, além de permitir a expansão para novas funcionalidades no futuro.
 
 # 4. Regras de negócio
-(*Nessa parte a equipe deve descrever as regras de negócio que serão implementadas no sistema. O texto abaixo descreve o que essa etapa deve conter e pode ser apagado depois.*)
+
+(_Nessa parte a equipe deve descrever as regras de negócio que serão implementadas no sistema. O texto abaixo descreve o que essa etapa deve conter e pode ser apagado depois._)
 
 As **Regras de negócio** são orientações e restrições que ajudam a regular as operações de uma empresa. **Regras** foram criadas para **colaborar com o funcionamento**, seja da sociedade, de uma escola, de um jogo, etc. Não seria diferente nas organizações. Vamos abordar melhor sobre esse assunto. Entender o que são as regras de negócio, sua importância, como são aplicadas e
 automatizadas na gestão por processo.
@@ -94,7 +184,8 @@ Podemos dizer que as regras de negócio são **limites impostos às operações*
 **4.2 Regras para a criação de regras de negócio**
 
 De maneira geral, as regras de negócio devem:
-- Ser **simples**, isto é,  ter apenas uma função.
+
+- Ser **simples**, isto é, ter apenas uma função.
 - Ser **completas**, com início, meio e fim.
 - Ser possíveis de **mensurar** e **rastrear**.
 - Estar em consonância com a **legislação**.
@@ -123,7 +214,7 @@ De maneira geral, as regras de negócio devem:
 - Número identificador.
 - Nome da regra.
 - Data de criação e data da última alteração para comparações e
-controle.
+  controle.
 - Nome dos Autores das versões.
 - Número da versão (1, 2 etc).
 - Dependências: insira o identificador das regras atreladas, às quais a regra em questão depende.
@@ -138,13 +229,14 @@ controle.
 - **RN05 – Registro de Empréstimo:** O gerente deve possuir acesso aos registros de empréstimos.
 - **RN06 – Pagamento de Multa:** O leitor que passar de 15 dias com o livro deverá pagar a multa de um real por dia de atraso.
 - **RN07 – Impressão de Orçamento:** Com as informações do
-orçamento registradas, a atendente deve imprimir o orçamento e
-repassar ao cliente para aprovação, e caso o cliente aprovar, a atendente deve solicitar a sua assinatura para aprovar a execução do serviço.
+  orçamento registradas, a atendente deve imprimir o orçamento e
+  repassar ao cliente para aprovação, e caso o cliente aprovar, a atendente deve solicitar a sua assinatura para aprovar a execução do serviço.
 - **RN08 – Abertura de OS:** Com o atendimento aprovado pelo cliente, a atendente deverá inserir os dados do cliente e do orçamento em um novo documento, para registros internos, realizando a abertura da OS.
 - **RN09 – Relatório de Fluxo de Caixa:** O relatório de fluxo de caixa será permitido somente para o administrador.
 
 # 5. Requisitos funcionais
-(*Nessa parte a equipe deve descrever os requisitos funcionais que serão implementados no sistema. O texto abaixo descreve o que essa etapa deve conter e pode ser apagado depois.*)
+
+(_Nessa parte a equipe deve descrever os requisitos funcionais que serão implementados no sistema. O texto abaixo descreve o que essa etapa deve conter e pode ser apagado depois._)
 
 **5.1 O que são requisitos funcionais?**
 
@@ -153,8 +245,8 @@ Um requisito funcional é uma declaração de como um sistema deve se comportar.
 Os requisitos funcionais são compostos de duas partes:
 **função** e **comportamento**.
 
-- A **função** é o que o sistema **faz**. Por exemplo: *“calcular imposto sobre vendas”*.
-- O **comportamento** é **como** o sistema faz. Por exemplo: *“O sistema deve calcular o imposto sobre vendas multiplicando o preço de compra pela alíquota do imposto.”*.
+- A **função** é o que o sistema **faz**. Por exemplo: _“calcular imposto sobre vendas”_.
+- O **comportamento** é **como** o sistema faz. Por exemplo: _“O sistema deve calcular o imposto sobre vendas multiplicando o preço de compra pela alíquota do imposto.”_.
 
 **5.2 Tipos de requisitos funcionais**
 
@@ -179,22 +271,23 @@ Cada requisito funcional precisa ser:
 - **Alcançável** dentro do prazo que você definiu
 - **Relevante** para seus objetivos de negócios
 - **Limitado** no tempo para que você possa
-acompanhar o progresso
+  acompanhar o progresso
 
 **5.4 Estrutura do requisito funcional**
 
 Um requisito funcional deve ser estruturado da seguinte forma:
 
 - **Nome do requisito funcional:** descrição do
-requisito.
+  requisito.
   - **Dados necessários:** dado 1, dado 2, dado 3.
   - **Usuários:** todos os níveis de usuário.
 
 **5.4.1 Nome do requisito funcional**
 
 **R.F. 99 - Nome do requisito funcional:** é o nome da função que o software terá. Sugerimos, por padronização, que tenha o prefixo R.F. (requisito funcional)
-seguida da numeração, para melhor identificação do requisito, acrescido do formato *“Substantivo + onde será feita a ação”*.
+seguida da numeração, para melhor identificação do requisito, acrescido do formato _“Substantivo + onde será feita a ação”_.
 Por exemplo:
+
 - R.F. 01 - Registro de Funcionários
 - R.F. 15 - Gerenciamento de consultas
 - R.F. 04 - Débito em conta corrente
@@ -207,7 +300,7 @@ Deixe para definir as numerações ao final, tendo em vista que mudanças podem 
 
 Sempre se preocupe em esclarecer dois pontos: o que o requisito faz e o motivo de sua existência. Isso é especialmente importante se a ação executada nesse requisito não for algo que já acontece naturalmente na empresa.
 Um exemplo é um Registro de funcionários, que talvez não exista hoje mas para o software é necessário para viabilizar uma autenticação de
-usuários. Outro exemplo é algo que faz sentido apenas para um  software, como a própria autenticação.
+usuários. Outro exemplo é algo que faz sentido apenas para um software, como a própria autenticação.
 
 **5.4.3 Dados necessários**
 
@@ -224,7 +317,7 @@ Já nas **saídas**, são os dados que serão exibidos em tela (sejam eles vindo
 **5.4.5 Exemplo de requisito funcional**
 
 - **R.F. 01 - Autenticação de usuário:** tem como propósito autenticar o acesso ao sistema, verificando se o usuário pode acessá-lo e, caso possa, o direcionando
-para a página principal de seu perfil de acesso.
+  para a página principal de seu perfil de acesso.
   - **Dados necessários:** login, senha, nível de permissão.
   - **Usuários:** todos os níveis de usuário.
 
@@ -235,13 +328,15 @@ As funcionalidades devem ser organizadas em: entradas, processos e saídas.
 **Entradas:** São as funcionalidades que alimentarão o software com as informações essenciais para seu uso.
 
 **Exemplos de entradas:**
+
 - “**Registro de usuário**” (para permitir depois seu acesso ao software).
 - “**Registro de paciente**” (que seria útil caso nosso software fosse ppara uma clínica, evitando registrar várias vezes os mesmos dados da pessoa a cada consulta e viabilizando um histórico de seus
-atendimentos).
+  atendimentos).
 
 **Processos:** Em geral, englobam toda ação que executa cálculos, processamentos de tomada de decisão ou transforma dados em novos dados.
 
 **Exemplos de processos:**
+
 - “**Autenticação de usuário**”, que usará os dados de “**Registro de usuário**” em sua execução.
 - “**Agendamento de consulta**”, que usará dados do “**Registro de paciente**” e talvez do “**Registro de funcionário**” em sua execução.
 
@@ -249,6 +344,7 @@ atendimentos).
 negócio, mas sem intenção de alterá-los, apenas permitindo sua visualização e filtragem.
 
 **Exemplos de saídas:**
+
 - “Relatório de consultas por paciente”.
 - Relatório de vendas”.
 - “Log de usuários autenticados”.
@@ -263,6 +359,7 @@ negócio. Lembre-se que, diferentemente das entradas e processos, aqui os dados 
 **Entradas:**
 
 - **R.F. 01 - Nome do requisito funcional:** descrição do requisito.
+
   - **Dados necessários:** dado 1, dado 2, dado 3.
   - **Usuários:** todos os níveis de usuário.
 
@@ -273,6 +370,7 @@ negócio. Lembre-se que, diferentemente das entradas e processos, aqui os dados 
 **Processamento:**
 
 - **R.F. 03 - Nome do requisito funcional:** descrição do requisito.
+
   - **Dados necessários:** dado 1, dado 2, dado 3.
   - **Usuários:** todos os níveis de usuário.
 
@@ -283,6 +381,7 @@ negócio. Lembre-se que, diferentemente das entradas e processos, aqui os dados 
 **Saídas:**
 
 - **R.F. 05 - Nome do requisito funcional:** descrição do requisito.
+
   - **Dados necessários:** dado 1, dado 2, dado 3.
   - **Usuários:** todos os níveis de usuário.
 
@@ -313,7 +412,7 @@ Os requisitos não funcionais podem ser divididos em duas categorias:
 
 1. **Atributos de qualidade:** Estas são as características do sistema que determinam sua qualidade geral. Exemplos de atributos de qualidade incluem segurança, desempenho e usabilidade.
 2. **Restrições:** Estas são as limitações impostas ao sistema.
-Exemplos de restrições incluem tempo, recursos e ambiente.
+   Exemplos de restrições incluem tempo, recursos e ambiente.
 
 **6.2 Vantagens dos requisitos não funcionais**
 
@@ -327,22 +426,23 @@ Os requisitos não funcionais ajudam a garantir que o sistema seja:
 **6.3 Exemplos de requisitos não funcionais**
 
 Aqui estão alguns exemplos de requisitos não funcionais:
+
 1. **Segurança**: O sistema deve ser protegido contra acesso não
-autorizado.
+   autorizado.
 2. **Atuação**: O sistema deve ser capaz de lidar com o número necessário
-de usuários sem qualquer degradação no desempenho.
+   de usuários sem qualquer degradação no desempenho.
 3. **Escalabilidade**: O sistema deve ser capaz de aumentar ou diminuir
-conforme necessário.
+   conforme necessário.
 4. **Disponibilidade**: O sistema deve estar disponível quando necessário.
 5. **Manutenção**: O sistema deve ser fácil de manter e atualizar.
 6. **Portabilidade**: O sistema deve ser capaz de rodar em diferentes
-plataformas com alterações mínimas.
+   plataformas com alterações mínimas.
 7. **Confiabilidade**: O sistema deve ser confiável e atender aos requisitos
-do usuário.
+   do usuário.
 8. **Usabilidade**: O sistema deve ser fácil de usar e entender.
 9. **Compatibilidade**: O sistema deve ser compatível com outros sistemas.
 10. **Conformidade**: O sistema deve cumprir todas as leis e regulamentos
-aplicáveis.
+    aplicáveis.
 
 **6.4 Exemplo de organização dos requisitos não funcionais**
 
@@ -355,10 +455,10 @@ aplicáveis.
 
 **Exemplos de requisitos não funcionais:**
 
-
 **Sistema de Padaria**:
+
 - **R.N.F. 01 - Navegador homologado:** O sistema deverá ser homologado para os navegadores Google Chrome e Mozilla Firefox.
-- **R.N.F. 02 - Processador:** É recomendado para o sistema  no mínimo um processador Intel i3, similar ou superior a geração 7100 ou AMD Ryzen 3 da geração similar ou superior ao 3100, para que o servidor funcione em sua melhor performance.
+- **R.N.F. 02 - Processador:** É recomendado para o sistema no mínimo um processador Intel i3, similar ou superior a geração 7100 ou AMD Ryzen 3 da geração similar ou superior ao 3100, para que o servidor funcione em sua melhor performance.
 - **R.N.F. 03 - Memória RAM:** é recomendável que o sistema possua no mínimo 2GB de RAM para melhor performance.
 - **R.N.F. 04 - Arquitetura:** Será utilizada a arquitetiura MVC para o desenvolvimento do sistema, com uso de uma API REST para comunicação com o banco de dados.
 - **R.N.F. 05 - Banco de dados:** O sistema será implementado com o banco de dados MySQL.
@@ -370,6 +470,7 @@ aplicáveis.
 - **R.N.F. 11 - Legais:** O sistema deve atender às exigências da LGPD (Leis Gerais da Proteção de Dados).
 
 **Sistema de Ordem de Serviço:**
+
 - **R.N.F. 01 - Navegadores homologados:** o sistema deverá ser homologado para os navegadores Google Chrome e Mozilla Firefox.
 - **R.N.F. 02 - Tecnologia Front-end:** Para a exibição em front-end, o software utilizará o CSS3 e o HTML5, além do framework Vue.js.
 - **R.N.F. 03- Tecnologia Back-end:** O software será desenvolvido pela linguagem de programação Python, com o framework Django e a API REST com Django REST Framework.
@@ -400,6 +501,7 @@ O diagrama de caso de uso é uma ferramenta de modelagem que descreve o comporta
 ![Diagrama de Caso de Uso](img/dcu1.png "Diagrama de Caso de Uso")
 
 **Os casos de uso:**
+
 - Descrevem como os **usuários interagem com o sistema** (as funcionalidades do sistema)
 - Facilitam a **organização dos requisitos** de um sistema.
 - Dão uma **visão externa** do sistema
@@ -421,12 +523,14 @@ Notação:
 **Exemplo: Loja de CDs**
 
 **Identificando os atores**
+
 - Uma loja de CDs possui discos para venda. Um cliente pode comprar uma quantidade ilimitada de discos para isto ele deve se dirigir à loja.
 - A loja possui um **atendente** cuja função é atender os clientes durante a venda dos discos. A loja também possui um **gerente** cuja função é administrar o estoque para que não faltem discos. Além disso é ele quem dá folga ao atendente, ou seja, ele também atende os clientes durante a venda dos discos.
 
 ![Identificando os atores](img/dcu_identificando_atores.png "Identificando os atores")
 
 **E o cliente?**
+
 - Não é ator pois ele **não interage** com o sistema!
 
 **7.2.2 Casos de uso**
@@ -458,6 +562,7 @@ Notação:
 - Um ator pode se relacionar com **um ou mais casos de uso**.
 
 > Dicas:
+>
 > - Não use setas nas linhas de associação.
 > - Associações não representam fluxo de informação.
 
@@ -478,7 +583,7 @@ Notação:
 
 - Quando dois ou mais atores podem se **comunicar com o mesmo conjunto de casos de uso**.
 - Indica que um ator **herda** as características de outro ator.
-– Um filho (herdeiro) pode se comunicar com todos os casos de uso que seu pai se comunica.
+  – Um filho (herdeiro) pode se comunicar com todos os casos de uso que seu pai se comunica.
 
 > **Dica:** coloque os herdeiros **embaixo**.
 
@@ -499,7 +604,7 @@ Notação:
 – O caso de uso filho pode substituir o caso de uso pai em qualquer lugar que ele apareça.
 
 > **Dica:** deve ser aplicada quando uma condição resulta na definição de
-diversos fluxos alternativos.
+> diversos fluxos alternativos.
 
 Notação:
 
@@ -512,10 +617,10 @@ Notação:
 **Novos requisitos:**
 
 - As vendas podem ser **à vista** ou **a prazo**. Em ambos os casos o estoque é
-atualizado e uma nota fiscal, entregue ao consumidor.
+  atualizado e uma nota fiscal, entregue ao consumidor.
 - No caso de uma **venda à vista**, clientes cadastrados na loja e que compram mais de 5 CDs de uma só vez ganham um desconto de 1% para cada ano de cadastro.
 - No caso de uma **venda a prazo**, ela pode ser parcelada em 2 pagamentos com um
-acréscimo de 20%. As vendas a prazo podem ser pagas no **cartão** ou no **boleto**.
+  acréscimo de 20%. As vendas a prazo podem ser pagas no **cartão** ou no **boleto**.
   - Para pagamento com **boleto**, são gerados boletos bancários que são entregues ao cliente e armazenados no sistema para lançamento posterior no caixa.
   - Para pagamento com **cartão**, os clientes com mais de 10 anos de cadastro na loja ganham o mesmo desconto das compras à vista.
 
@@ -535,7 +640,7 @@ acréscimo de 20%. As vendas a prazo podem ser pagas no **cartão** ou no **bole
   - Partes obrigatórias: caso de uso base.
   - Partes opcionais: caso de uso estendido.
 - Fatorar comportamentos variantes do sistema (podendo reusar este comportamento
-em outros casos de uso).
+  em outros casos de uso).
 
 **Notação:**
 
@@ -546,8 +651,9 @@ em outros casos de uso).
 **Identificando os relacionamentos de dependência (extensão)**
 
 **Novos requisitos:**
+
 - No caso de uma venda à vista, clientes cadastrados na loja e que compram mais
-de 5 CDs de uma só vez ganham um **desconto** de 1% para cada ano de cadastro.
+  de 5 CDs de uma só vez ganham um **desconto** de 1% para cada ano de cadastro.
 - No caso de uma venda a prazo...
   - ...Para pagamento com cartão, os clientes com mais de 10 anos de cadastro na loja ganham o mesmo **desconto** das compras à vista.
 
@@ -556,7 +662,7 @@ de 5 CDs de uma só vez ganham um **desconto** de 1% para cada ano de cadastro.
 **Inclusão**
 
 - Evita repetição ao fatorar uma atividade
-comum a dois ou mais casos de uso.
+  comum a dois ou mais casos de uso.
 - Um caso de uso pode incluir vários casos de uso.
 
 **Notação:**
@@ -574,7 +680,7 @@ acesso ao sistema.
 **7.2.4 Fronteira do sistema**
 
 - Elemento opcional (mas essencial para um bom
-entendimento).
+  entendimento).
 - Serve para definir a área de atuação do sistema, ou seja, seus limites.
 
 **Identificando a fronteira do sistema**
@@ -582,6 +688,3 @@ entendimento).
 ![Identificando a fronteira do sistema](img/dcu_identificando_a_fronteira_do_sistema.png "Identificando a fronteira do sistema")
 
 ---
-
-
-
