@@ -284,49 +284,49 @@ RF37: Interface mobile para entregadores atualizarem entregas e pagamentos.
 
 # 6. Requisitos não funcionais
 
-RFN01: Tempo de resposta rápido, mesmo em horários de pico.
+RNF01: Tempo de resposta rápido, mesmo em horários de pico.
 
-RFN02: Suporte a grande volume de pedidos simultâneos.
+RNF02: Suporte a grande volume de pedidos simultâneos.
 
-RFN03: Baixa latência na atualização de status e rastreamento.
+RNF03: Baixa latência na atualização de status e rastreamento.
 
-RFN04: Dados sensíveis devem ser criptografados.
+RNF04: Dados sensíveis devem ser criptografados.
 
-RFN05: Autenticação forte e controle de acesso por papéis.
+RNF05: Autenticação forte e controle de acesso por papéis.
 
-RFN06: Conformidade com leis de proteção de dados (ex: LGPD).
+RNF06: Conformidade com leis de proteção de dados (ex: LGPD).
 
-RFN07: Proteção contra vulnerabilidades web.
+RNF07: Proteção contra vulnerabilidades web.
 
-RFN08: Backups automáticos e regulares do banco de dados.
+RNF08: Backups automáticos e regulares do banco de dados.
 
-RFN09: Interface intuitiva e clara para todos os perfis.
+RNF09: Interface intuitiva e clara para todos os perfis.
 
-RFN10: Processo de pedido online simples e direto.
+RNF10: Processo de pedido online simples e direto.
 
-RFN11: Feedback claro ao usuário sobre ações.
+RNF11: Feedback claro ao usuário sobre ações.
 
-RFN12: Interface responsiva para diferentes dispositivos.
+RNF12: Interface responsiva para diferentes dispositivos.
 
-RFN13: Documentação e tutoriais disponíveis, se necessário.
+RNF13: Documentação e tutoriais disponíveis, se necessário.
 
-RFN14: Alta disponibilidade no horário de funcionamento.
+RNF14: Alta disponibilidade no horário de funcionamento.
 
-RFN15: Sistema robusto e de rápida recuperação.
+RNF15: Sistema robusto e de rápida recuperação.
 
-RFN16: Controle de estoque preciso.
+RNF16: Controle de estoque preciso.
 
-RFN17: Código bem estruturado, modular e documentado.
+RNF17: Código bem estruturado, modular e documentado.
 
-RFN18: Escalabilidade para mais usuários e pedidos.
+RNF18: Escalabilidade para mais usuários e pedidos.
 
-RFN19: Facilidade de atualização de cardápio e promoções.
+RNF19: Facilidade de atualização de cardápio e promoções.
 
-RFN20: Integração segura com gateways de pagamento.
+RNF20: Integração segura com gateways de pagamento.
 
-RFN21: Integrações futuras com outros serviços.
+RNF21: Integrações futuras com outros serviços.
 
-RFN22: Compatibilidade com navegadores modernos.
+RNF22: Compatibilidade com navegadores modernos.
 
 # 7. Diagrama de Caso de Uso
 
