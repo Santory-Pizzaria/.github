@@ -20,7 +20,7 @@ Links do projeto:
 
 - [Documentação (esse documento)]()
 - Backend: [Repositório](https://github.com/Santory-Pizzaria/SantoryBackEnd.git) e [Publicação](https://santory-backend.onrender.com/)
-- Frontend: [Repositório](https://github.com/Santory-Pizzaria/SantoryFrontEnd.git) e [Publicação](https://santoryfrontend.vercel.app/)
+- Frontend: [Repositório](https://github.com/Santory-Pizzaria/SantoryFrontEnd.git) e [Publicação](https://santoryfrontend-1.vercel.app/login)
 
 # 1. Desenvolvimento
 
